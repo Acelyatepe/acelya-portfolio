@@ -1,0 +1,75 @@
+'use client';
+import { createContext, useContext, useEffect, useState } from 'react';
+
+type Language = 'tr' | 'en' | 'de';
+const LanguageContext = createContext<{ language: Language; setLanguage: (language: Language) => void }>({ language: 'tr', setLanguage: () => undefined });
+
+const translations: Record<'en' | 'de', Record<string, string>> = {
+  en: {
+    'Ana Sayfa':'Home','Hakkımda':'About','Yeteneklerim':'Skills','Projelerim':'Projects','Eğitim':'Education','İletişim':'Contact','E-posta gönder':'Send email','Tüm hakları saklıdır.':'All rights reserved.','Merhaba, ben':'Hello, I am','Web Tasarımcı & Frontend Geliştirici':'Web Designer & Frontend Developer','Modern, sade ve kullanıcı odaklı web arayüzleri tasarlıyor; frontend geliştirme alanında kendimi sürekli geliştiriyorum.':'I design modern, minimal and user-focused web interfaces while continuously improving my frontend development skills.','Projelerimi keşfet':'Explore my projects','Benimle iletişime geç':'Contact me','Öne çıkan projeler':'Featured projects','Tüm projeleri gör':'View all projects','02 / Seçili çalışmalar':'02 / Selected work','Kullanıcı odaklı':'User focused','Temiz kod':'Clean code','Duyarlı tasarım':'Responsive design','Sürekli öğrenme':'Continuous learning','Planlanıyor':'Planned','Geliştiriliyor':'In progress','Yayında':'Live','Proje görseli daha sonra eklenecek':'Project image will be added later','Projeyi incele':'View project','Teknolojiler proje geliştirilirken eklenecek.':'Technologies will be added during development.','Merakla öğreniyor, özenle üretiyorum.':'Learning with curiosity, creating with care.','Dijital deneyimlerin hem güzel hem anlaşılır hem de herkes için kullanılabilir olması gerektiğine inanıyorum.':'I believe digital experiences should be beautiful, clear and accessible to everyone.','Sade tasarım':'Minimal design','Gereksiz kalabalıktan uzak, amacı net arayüzler.':'Clear interfaces without unnecessary clutter.','Kullanıcı odağı':'User focus','Her kararın merkezinde erişilebilirlik ve deneyim.':'Accessibility and experience at the center of every decision.','Yeni araçları keşfederken temelleri sağlam tutmak.':'Keeping strong foundations while exploring new tools.','Öğrenme yaklaşımım':'My learning approach','Küçük adımlar.':'Small steps.','Tutarlı ilerleme.':'Consistent progress.','Araçlardan önce, doğru yaklaşım.':'The right approach before the tools.','Öğrenme yolculuğumda kullandığım teknolojiler ve üretim sürecimi destekleyen beceriler.':'Technologies I use while learning and skills that support my creative process.','öğreniyor / uyguluyor':'learning / practicing','Fikirden çalışan ürüne.':'From idea to working product.','Öğrenirken ürettiğim web, arayüz ve JavaScript çalışmalarını keşfedin.':'Explore the web, interface and JavaScript projects I create while learning.','Öğrenme yolculuğum.':'My learning journey.','Birlikte bir şeyler üretelim.':'Let’s create something together.','Mesaj gönder':'Send a message','İletişim durumu':'Contact status','Adınız':'Your name','Konu':'Subject','Mesaj':'Message','E-posta gönder':'Send email','Derece':'Degree','Durum':'Status','Onur bilgisi':'Honors','Mezuniyet':'Graduation','Mezun':'Graduate','Onur Öğrencisi':'Honor Student','Önlisans':'Associate Degree'
+  },
+  de: {
+    'Ana Sayfa':'Startseite','Hakkımda':'Über mich','Yeteneklerim':'Kenntnisse','Projelerim':'Projekte','Eğitim':'Ausbildung','İletişim':'Kontakt','E-posta gönder':'E-Mail senden','Tüm hakları saklıdır.':'Alle Rechte vorbehalten.','Merhaba, ben':'Hallo, ich bin','Web Tasarımcı & Frontend Geliştirici':'Webdesignerin & Frontend-Entwicklerin','Modern, sade ve kullanıcı odaklı web arayüzleri tasarlıyor; frontend geliştirme alanında kendimi sürekli geliştiriyorum.':'Ich gestalte moderne, klare und nutzerorientierte Weboberflächen und entwickle meine Frontend-Kenntnisse kontinuierlich weiter.','Projelerimi keşfet':'Meine Projekte entdecken','Benimle iletişime geç':'Kontakt aufnehmen','Öne çıkan projeler':'Ausgewählte Projekte','Tüm projeleri gör':'Alle Projekte ansehen','02 / Seçili çalışmalar':'02 / Ausgewählte Arbeiten','Kullanıcı odaklı':'Nutzerorientiert','Temiz kod':'Sauberer Code','Duyarlı tasarım':'Responsives Design','Sürekli öğrenme':'Kontinuierliches Lernen','Planlanıyor':'Geplant','Geliştiriliyor':'In Entwicklung','Yayında':'Online','Proje görseli daha sonra eklenecek':'Projektbild wird später ergänzt','Projeyi incele':'Projekt ansehen','Teknolojiler proje geliştirilirken eklenecek.':'Technologien werden während der Entwicklung ergänzt.','Merakla öğreniyor, özenle üretiyorum.':'Mit Neugier lernen, mit Sorgfalt gestalten.','Dijital deneyimlerin hem güzel hem anlaşılır hem de herkes için kullanılabilir olması gerektiğine inanıyorum.':'Ich glaube, dass digitale Erlebnisse schön, verständlich und für alle zugänglich sein sollten.','Sade tasarım':'Klares Design','Gereksiz kalabalıktan uzak, amacı net arayüzler.':'Klare Oberflächen ohne unnötige Ablenkung.','Kullanıcı odağı':'Nutzerfokus','Her kararın merkezinde erişilebilirlik ve deneyim.':'Barrierefreiheit und Nutzererlebnis stehen im Mittelpunkt.','Yeni araçları keşfederken temelleri sağlam tutmak.':'Starke Grundlagen beim Entdecken neuer Werkzeuge.','Öğrenme yaklaşımım':'Mein Lernansatz','Küçük adımlar.':'Kleine Schritte.','Tutarlı ilerleme.':'Beständiger Fortschritt.','Araçlardan önce, doğru yaklaşım.':'Der richtige Ansatz vor den Werkzeugen.','Öğrenme yolculuğumda kullandığım teknolojiler ve üretim sürecimi destekleyen beceriler.':'Technologien und Fähigkeiten, die meinen Lern- und Gestaltungsprozess unterstützen.','öğreniyor / uyguluyor':'lernen / anwenden','Fikirden çalışan ürüne.':'Von der Idee zum funktionierenden Produkt.','Öğrenirken ürettiğim web, arayüz ve JavaScript çalışmalarını keşfedin.':'Entdecken Sie meine Web-, Interface- und JavaScript-Projekte.','Öğrenme yolculuğum.':'Meine Lernreise.','Birlikte bir şeyler üretelim.':'Lassen Sie uns gemeinsam etwas gestalten.','Mesaj gönder':'Nachricht senden','İletişim durumu':'Kontaktstatus','Adınız':'Ihr Name','Konu':'Betreff','Mesaj':'Nachricht','Derece':'Abschluss','Durum':'Status','Onur bilgisi':'Auszeichnung','Mezuniyet':'Abschlussjahr','Mezun':'Absolventin','Onur Öğrencisi':'Ehrenstudentin','Önlisans':'Associate Degree'
+  }
+};
+
+Object.assign(translations.en, {
+  'Fikirleri sade ve etkili dijital deneyimlere dönüştürüyorum.':'I turn ideas into simple and effective digital experiences.',
+  'Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.':'I focus on improving my web design and frontend development skills. Simplicity, usability and order are important to me.',
+  'Anadolu Üniversitesi Web Tasarımı ve Kodlama Önlisans programından mezun oldum. Eğitim sürecimde tasarım ile kodun birlikte nasıl daha anlaşılır dijital deneyimlere dönüşebileceğine odaklandım.':'I graduated from Anadolu University’s Web Design and Coding associate program. During my education, I focused on how design and code can create clearer digital experiences together.',
+  'HTML, CSS ve JavaScript temellerimi geliştirirken responsive tasarım, UI / UX, Figma, Git ve GitHub gibi araçlarla düzenli olarak pratik yapıyorum.':'While strengthening my HTML, CSS and JavaScript foundations, I regularly practice responsive design, UI/UX, Figma, Git and GitHub.',
+  'Yeni teknolojiler öğrenerek hem görsel açıdan güçlü hem de kullanıcı dostu web deneyimleri oluşturmayı hedefliyorum. Her projeyi araştırma, deneme ve geri bildirimlerle ilerlettiğim bir öğrenme fırsatı olarak görüyorum.':'I aim to create visually strong and user-friendly web experiences by learning new technologies. I see every project as an opportunity to learn through research, experimentation and feedback.',
+  'Bir proje fikriniz, iş birliği öneriniz ya da yalnızca merhaba demek istediğiniz bir konu varsa mesajınızı bekliyorum.':'If you have a project idea, collaboration proposal or simply want to say hello, I would be happy to hear from you.',
+  'E-posta ve sosyal medya hesapları üzerinden iletişime geçebilirsiniz.':'You can contact me by email or through my social media accounts.',
+  'Buton, mesajınızı varsayılan e-posta uygulamanızda hazırlar. Göndermeden önce içeriği kontrol edebilirsiniz.':'The button prepares your message in your default email app. You can review it before sending.',
+  'Adınızı yazın':'Enter your name','Mesajınızın konusu':'Message subject','Projenizden veya fikrinizden bahsedin':'Tell me about your project or idea',
+  'E-Ticaret':'E-commerce','Restoran':'Restaurant','Kahve Dükkânı':'Coffee Shop','Web Uygulaması':'Web Application','Portfolio':'Portfolio'
+});
+Object.assign(translations.de, {
+  'Fikirleri sade ve etkili dijital deneyimlere dönüştürüyorum.':'Ich verwandle Ideen in klare und wirkungsvolle digitale Erlebnisse.',
+  'Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.':'Ich konzentriere mich darauf, meine Fähigkeiten in Webdesign und Frontend-Entwicklung weiterzuentwickeln. Klarheit, Benutzerfreundlichkeit und Ordnung sind mir wichtig.',
+  'Anadolu Üniversitesi Web Tasarımı ve Kodlama Önlisans programından mezun oldum. Eğitim sürecimde tasarım ile kodun birlikte nasıl daha anlaşılır dijital deneyimlere dönüşebileceğine odaklandım.':'Ich habe den Associate-Studiengang Webdesign und Coding an der Anadolu Universität abgeschlossen. Dabei habe ich mich darauf konzentriert, wie Design und Code gemeinsam verständliche digitale Erlebnisse schaffen.',
+  'HTML, CSS ve JavaScript temellerimi geliştirirken responsive tasarım, UI / UX, Figma, Git ve GitHub gibi araçlarla düzenli olarak pratik yapıyorum.':'Während ich meine Grundlagen in HTML, CSS und JavaScript vertiefe, übe ich regelmäßig Responsive Design, UI/UX, Figma, Git und GitHub.',
+  'Yeni teknolojiler öğrenerek hem görsel açıdan güçlü hem de kullanıcı dostu web deneyimleri oluşturmayı hedefliyorum. Her projeyi araştırma, deneme ve geri bildirimlerle ilerlettiğim bir öğrenme fırsatı olarak görüyorum.':'Durch das Lernen neuer Technologien möchte ich visuell starke und benutzerfreundliche Web-Erlebnisse schaffen. Jedes Projekt ist für mich eine Lernchance durch Recherche, Experimente und Feedback.',
+  'Bir proje fikriniz, iş birliği öneriniz ya da yalnızca merhaba demek istediğiniz bir konu varsa mesajınızı bekliyorum.':'Wenn Sie eine Projektidee oder einen Vorschlag zur Zusammenarbeit haben oder einfach Hallo sagen möchten, freue ich mich über Ihre Nachricht.',
+  'E-posta ve sosyal medya hesapları üzerinden iletişime geçebilirsiniz.':'Sie können mich per E-Mail oder über meine sozialen Netzwerke kontaktieren.',
+  'Buton, mesajınızı varsayılan e-posta uygulamanızda hazırlar. Göndermeden önce içeriği kontrol edebilirsiniz.':'Die Schaltfläche bereitet Ihre Nachricht in Ihrer Standard-E-Mail-App vor. Sie können sie vor dem Senden prüfen.',
+  'Adınızı yazın':'Namen eingeben','Mesajınızın konusu':'Betreff Ihrer Nachricht','Projenizden veya fikrinizden bahsedin':'Erzählen Sie von Ihrem Projekt oder Ihrer Idee',
+  'E-Ticaret':'E-Commerce','Restoran':'Restaurant','Kahve Dükkânı':'Café','Web Uygulaması':'Webanwendung','Portfolio':'Portfolio'
+});
+
+const original = new WeakMap<Node, string>();
+function translatePage(language: Language) {
+  document.documentElement.lang = language;
+  const reverse = new Map<string,string>();
+  Object.values(translations).forEach(dictionary => Object.entries(dictionary).forEach(([tr,value]) => reverse.set(value,tr)));
+  const dictionary = language === 'tr' ? {} : translations[language];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node: Node | null;
+  while ((node = walker.nextNode())) {
+    const raw = original.get(node) ?? node.textContent ?? '';
+    if (!original.has(node)) original.set(node, reverse.get(raw.trim()) ?? raw);
+    const base = original.get(node) ?? raw;
+    const trimmed = base.trim();
+    if (!trimmed) continue;
+    const translated = dictionary[trimmed];
+    node.textContent = translated ? base.replace(trimmed, translated) : base;
+  }
+  document.querySelectorAll<HTMLElement>('[placeholder]').forEach(element => {
+    const base = element.dataset.originalPlaceholder || element.getAttribute('placeholder') || '';
+    element.dataset.originalPlaceholder = base;
+    element.setAttribute('placeholder', dictionary[base] || base);
+  });
+}
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [language, setLanguageState] = useState<Language>('tr');
+  useEffect(() => { const saved = localStorage.getItem('portfolio-language') as Language | null; if (saved && ['tr','en','de'].includes(saved)) setLanguageState(saved); }, []);
+  useEffect(() => { translatePage(language); localStorage.setItem('portfolio-language', language); }, [language]);
+  const setLanguage = (next: Language) => setLanguageState(next);
+  return <LanguageContext.Provider value={{ language, setLanguage }}>{children}</LanguageContext.Provider>;
+}
+export function LanguageSwitcher() {
+  const { language, setLanguage } = useContext(LanguageContext);
+  return <div className="language-switcher" aria-label="Dil seçimi">{(['tr','en','de'] as Language[]).map(item => <button key={item} type="button" className={language === item ? 'active' : ''} onClick={() => setLanguage(item)} aria-pressed={language === item}>{item.toUpperCase()}</button>)}</div>;
+}

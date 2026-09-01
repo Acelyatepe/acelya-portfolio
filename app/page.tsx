@@ -5,7 +5,7 @@ import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 
 export default function Home() {
-  const featured = projects.filter((project) => project.featured).slice(0, 4);
+  const featured = projects.filter((project) => project.featured).slice(0, 2);
   return <><SiteHeader/><main>
     <section className="hero section-shell" aria-labelledby="hero-title">
       <div className="hero-copy reveal"><p className="eyebrow"><span>✦</span> Merhaba, ben</p><h1 id="hero-title">{siteConfig.name}</h1><p className="hero-role">{siteConfig.title}</p><p className="hero-intro">{siteConfig.intro}</p><div className="hero-actions"><a href="/projeler" target="_top" className="button button-dark">Projelerimi keşfet <ArrowRight size={18}/></a><a href="/iletisim" target="_top" className="button button-light">Benimle iletişime geç <MoveUpRight size={18}/></a></div></div>
