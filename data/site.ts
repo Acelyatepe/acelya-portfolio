@@ -5,7 +5,9 @@ export const siteConfig = {
   name: 'Açelya', title: 'Web Tasarımcı & Frontend Geliştirici',
   intro: 'Modern, sade ve kullanıcı odaklı web arayüzleri tasarlıyor; frontend geliştirme alanında kendimi sürekli geliştiriyorum.',
   about: ['Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.', 'Yeni teknolojiler öğrenerek hem görsel açıdan güçlü hem de kullanıcı dostu web deneyimleri oluşturmayı hedefliyorum.'],
-  email: null, socials: { linkedin: null, github: null, instagram: null }, availability: 'Bilgi daha sonra eklenecek',
+  email: 'aclysde@gmail.com',
+  socials: { linkedin: 'https://www.linkedin.com/in/sude-acelya-tepe/', github: 'https://github.com/Acelyatepe', instagram: null },
+  availability: 'E-posta ve sosyal medya hesapları üzerinden iletişime geçebilirsiniz.',
 };
 export const skills = [{ name: 'HTML', icon: 'Code2' }, { name: 'CSS', icon: 'Palette' }, { name: 'JavaScript', icon: 'Braces' }, { name: 'Responsive Tasarım', icon: 'PanelsTopLeft' }, { name: 'UI / UX', icon: 'PenTool' }, { name: 'Figma', icon: 'Figma' }, { name: 'Git & GitHub', icon: 'GitBranch' }, { name: 'VS Code', icon: 'TerminalSquare' }, { name: 'Web Standartları', icon: 'BadgeCheck' }, { name: 'Problem Çözme', icon: 'Puzzle' }];
 export const education = [{ year: '2026', school: 'Anadolu Üniversitesi', program: 'Web Tasarımı ve Kodlama', degree: 'Önlisans', status: 'Mezun', honor: 'Onur Öğrencisi' }];
