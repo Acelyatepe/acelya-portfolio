@@ -1,0 +1,2 @@
+import Link from 'next/link'; import { ArrowLeft } from 'lucide-react'; import { SiteHeader } from '@/components/site-header'; import { SiteFooter } from '@/components/site-footer';
+export default function NotFound() { return <><SiteHeader/><main className="not-found section-shell"><span>404</span><h1>Bu sayfa henüz burada değil.</h1><p>Aradığınız sayfa taşınmış veya henüz oluşturulmamış olabilir.</p><Link href="/" className="button button-dark"><ArrowLeft size={17}/> Ana sayfaya dön</Link></main><SiteFooter/></>; }
