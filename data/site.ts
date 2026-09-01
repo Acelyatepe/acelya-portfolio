@@ -2,13 +2,13 @@ export type ProjectCategory = 'E-Ticaret' | 'Restoran' | 'Blog' | 'Kahve Dükkâ
 export type Project = { slug: string; title: string; symbol: string; category: ProjectCategory; summary: string; purpose: string; features: string[]; technologies: string[]; learnings: string; challenges: string; solution: string; status: 'Planlanıyor' | 'Geliştiriliyor' | 'Yayında'; featured: boolean; accent: 'sage' | 'yellow' | 'blue' | 'lavender' | 'pink' | 'cream'; image?: string; github?: string; demo?: string; };
 
 export const siteConfig = {
-  name: 'Adınız Soyadınız', title: 'Web Tasarımcı & Frontend Geliştirici',
-  intro: 'Sade estetiği güçlü kullanıcı deneyimiyle buluşturan, erişilebilir ve özenli web arayüzleri tasarlıyor ve geliştiriyorum.',
-  about: ['Web tasarımı ve frontend geliştirme alanında öğrenmeye, üretmeye ve her projede daha iyi çözümler geliştirmeye odaklanıyorum.', 'Kullanıcı deneyimini merkeze alan sade tasarımları, düzenli kodu ve ayrıntılara gösterilen özeni değerli buluyorum.'],
-  email: '', socials: { linkedin: '', github: '', instagram: '' }, availability: 'Bilgi daha sonra eklenecek',
+  name: 'Açelya', title: 'Web Tasarımcı & Frontend Geliştirici',
+  intro: 'Modern, sade ve kullanıcı odaklı web arayüzleri tasarlıyor; frontend geliştirme alanında kendimi sürekli geliştiriyorum.',
+  about: ['Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.', 'Yeni teknolojiler öğrenerek hem görsel açıdan güçlü hem de kullanıcı dostu web deneyimleri oluşturmayı hedefliyorum.'],
+  email: null, socials: { linkedin: null, github: null, instagram: null }, availability: 'Bilgi daha sonra eklenecek',
 };
 export const skills = [{ name: 'HTML', icon: 'Code2' }, { name: 'CSS', icon: 'Palette' }, { name: 'JavaScript', icon: 'Braces' }, { name: 'Responsive Tasarım', icon: 'PanelsTopLeft' }, { name: 'UI / UX', icon: 'PenTool' }, { name: 'Figma', icon: 'Figma' }, { name: 'Git & GitHub', icon: 'GitBranch' }, { name: 'VS Code', icon: 'TerminalSquare' }, { name: 'Web Standartları', icon: 'BadgeCheck' }, { name: 'Problem Çözme', icon: 'Puzzle' }];
-export const education = [{ date: 'Tarih daha sonra eklenecek', school: 'Okul bilgisi daha sonra eklenecek', department: 'Bölüm bilgisi daha sonra eklenecek', description: 'Eğitim açıklaması merkezi veri dosyasından güncellenebilir.' }];
+export const education = [{ year: '2026', school: 'Anadolu Üniversitesi', program: 'Web Tasarımı ve Kodlama', degree: 'Önlisans', status: 'Mezun', honor: 'Onur Öğrencisi' }];
 
 const pending = { technologies: [] as string[], learnings: 'Proje geliştirildikçe öğrenilenler bu alana eklenecek.', challenges: 'Proje geliştirme süreci başladığında karşılaşılan problemler burada paylaşılacak.', solution: 'Uygulanan çözüm yaklaşımı proje ilerledikçe burada anlatılacak.', status: 'Planlanıyor' as const };
 
