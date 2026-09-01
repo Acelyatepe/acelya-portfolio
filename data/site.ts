@@ -16,6 +16,15 @@ export const siteConfig = {
 };
 export const skills = [{ name: 'HTML', icon: 'Code2' }, { name: 'CSS', icon: 'Palette' }, { name: 'JavaScript', icon: 'Braces' }, { name: 'Responsive Tasarım', icon: 'PanelsTopLeft' }, { name: 'UI / UX', icon: 'PenTool' }, { name: 'Figma', icon: 'Figma' }, { name: 'Git & GitHub', icon: 'GitBranch' }, { name: 'VS Code', icon: 'TerminalSquare' }, { name: 'Web Standartları', icon: 'BadgeCheck' }, { name: 'Problem Çözme', icon: 'Puzzle' }];
 export const education = [{ year: '2026', school: 'Anadolu Üniversitesi', program: 'Web Tasarımı ve Kodlama', degree: 'Önlisans', status: 'Mezun', honor: 'Onur Öğrencisi' }];
+export const certificates = [
+  { title: 'Animasyon Tasarımı ve Uygulamaları', issuer: 'BTK Akademi', date: '26.07.2026', image: '/certificates/animasyon.png' },
+  { title: 'Grafik Tasarıma Giriş', issuer: 'BTK Akademi', date: '12.08.2026', image: '/certificates/grafik-tasarim.png' },
+  { title: 'Sosyal Medya Uzmanlığına Giriş', issuer: 'BTK Akademi', date: '02.08.2026', image: '/certificates/sosyal-medya-uzmanligi.png' },
+  { title: 'Girişimcilikte Sunum Teknikleri ve İletişim Yönetimi', issuer: 'BTK Akademi', date: '15.12.2025', image: '/certificates/sunum-iletisim.png' },
+  { title: 'İngilizce A1 Seviyesi', issuer: 'Millî Eğitim Bakanlığı', date: '01.10.2021', image: '/certificates/ingilizce-a1.png' },
+  { title: 'İngilizce A2 Seviyesi', issuer: 'Millî Eğitim Bakanlığı', date: '10.11.2021', image: '/certificates/ingilizce-a2.png' },
+  { title: 'İş Yaşamında Sosyal Medya Kullanımı', issuer: 'Millî Eğitim Bakanlığı', date: '04.02.2025', image: '/certificates/is-yasaminda-sosyal-medya.png' },
+];
 
 const pending = { technologies: [] as string[], learnings: 'Proje geliştirildikçe öğrenilenler bu alana eklenecek.', challenges: 'Proje geliştirme süreci başladığında karşılaşılan problemler burada paylaşılacak.', solution: 'Uygulanan çözüm yaklaşımı proje ilerledikçe burada anlatılacak.', status: 'Planlanıyor' as const };
 
