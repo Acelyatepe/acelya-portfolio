@@ -4,7 +4,12 @@ export type Project = { slug: string; title: string; symbol: string; category: P
 export const siteConfig = {
   name: 'Açelya', title: 'Web Tasarımcı & Frontend Geliştirici',
   intro: 'Modern, sade ve kullanıcı odaklı web arayüzleri tasarlıyor; frontend geliştirme alanında kendimi sürekli geliştiriyorum.',
-  about: ['Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.', 'Yeni teknolojiler öğrenerek hem görsel açıdan güçlü hem de kullanıcı dostu web deneyimleri oluşturmayı hedefliyorum.'],
+  about: [
+    'Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.',
+    'Anadolu Üniversitesi Web Tasarımı ve Kodlama Önlisans programından mezun oldum. Eğitim sürecimde tasarım ile kodun birlikte nasıl daha anlaşılır dijital deneyimlere dönüşebileceğine odaklandım.',
+    'HTML, CSS ve JavaScript temellerimi geliştirirken responsive tasarım, UI / UX, Figma, Git ve GitHub gibi araçlarla düzenli olarak pratik yapıyorum.',
+    'Yeni teknolojiler öğrenerek hem görsel açıdan güçlü hem de kullanıcı dostu web deneyimleri oluşturmayı hedefliyorum. Her projeyi araştırma, deneme ve geri bildirimlerle ilerlettiğim bir öğrenme fırsatı olarak görüyorum.',
+  ],
   email: 'aclysde@gmail.com',
   socials: { linkedin: 'https://www.linkedin.com/in/sude-acelya-tepe/', github: 'https://github.com/Acelyatepe', instagram: null },
   availability: 'E-posta ve sosyal medya hesapları üzerinden iletişime geçebilirsiniz.',
