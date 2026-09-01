@@ -1,2 +1,14 @@
-import Image from 'next/image'; import Link from 'next/link'; import { ArrowUpRight, GitFork } from 'lucide-react'; import type { Project } from '@/data/site';
-export function ProjectCard({ project, index }: { project: Project; index: number }) { return <article className="project-card reveal" style={{ animationDelay: `${index * 90}ms` }}><Link href={`/projeler/${project.slug}`} className={`project-visual ${project.accent}`} aria-label={`${project.title} projesini incele`}>{project.image ? <Image src={project.image} alt={`${project.title} önizlemesi`} width={720} height={480} loading="lazy" /> : <div className="project-placeholder"><span>0{index + 1}</span><strong>&lt;/&gt;</strong><small>Görsel daha sonra eklenecek</small></div>}</Link><div className="project-card-body"><div className="project-meta"><span>{project.category}</span><span>↗</span></div><h3>{project.title}</h3><p>{project.summary}</p><div className="tech-list">{project.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div><div className="card-actions"><Link className="text-link" href={`/projeler/${project.slug}`}>Projeyi incele <ArrowUpRight size={16} /></Link>{project.github && <a href={project.github} aria-label="GitHub deposu"><GitFork size={18} /></a>}</div></div></article>; }
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUpRight, ImageIcon } from 'lucide-react';
+import type { Project } from '@/data/site';
+
+export function ProjectCard({ project, index }: { project: Project; index: number }) {
+  return <article className={`project-card project-variant-${index % 3} reveal`} style={{ animationDelay: `${index * 80}ms` }}>
+    <Link href={`/projeler/${project.slug}`} className={`project-visual ${project.accent}`} aria-label={`${project.title} projesini incele`}>
+      {project.image ? <Image src={project.image} alt={`${project.title} proje önizlemesi`} fill sizes="(max-width: 700px) 100vw, 50vw"/> : <div className="project-placeholder"><span className="project-number">0{index + 1}</span><span className="project-symbol">{project.symbol}</span><div><ImageIcon size={15}/><small>Proje görseli daha sonra eklenecek</small></div></div>}
+      <span className="project-status">{project.status}</span>
+    </Link>
+    <div className="project-card-body"><div className="project-meta"><span>{project.category}</span><span>↗</span></div><h3>{project.title}</h3><p>{project.summary}</p>{project.technologies.length > 0 ? <div className="tech-list">{project.technologies.map((tech)=><span key={tech}>{tech}</span>)}</div> : <p className="technology-pending">Teknolojiler proje geliştirilirken eklenecek.</p>}<div className="card-actions"><Link className="text-link" href={`/projeler/${project.slug}`}>Projeyi incele <ArrowUpRight size={16}/></Link></div></div>
+  </article>;
+}
