@@ -14,6 +14,7 @@ const translations: Record<'en' | 'de', Record<string, string>> = {
 };
 
 Object.assign(translations.en, {
+  'Canlı İncele':'View live','Canlı demo':'Live demo',
   'Fikirleri sade ve etkili dijital deneyimlere dönüştürüyorum.':'I turn ideas into simple and effective digital experiences.',
   'Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.':'I focus on improving my web design and frontend development skills. Simplicity, usability and order are important to me.',
   'Anadolu Üniversitesi Web Tasarımı ve Kodlama Önlisans programından mezun oldum. Eğitim sürecimde tasarım ile kodun birlikte nasıl daha anlaşılır dijital deneyimlere dönüşebileceğine odaklandım.':'I graduated from Anadolu University’s Web Design and Coding associate program. During my education, I focused on how design and code can create clearer digital experiences together.',
@@ -26,6 +27,7 @@ Object.assign(translations.en, {
   'E-Ticaret':'E-commerce','Restoran':'Restaurant','Kahve Dükkânı':'Coffee Shop','Web Uygulaması':'Web Application','Portfolio':'Portfolio'
 });
 Object.assign(translations.de, {
+  'Canlı İncele':'Live ansehen','Canlı demo':'Live-Demo',
   'Fikirleri sade ve etkili dijital deneyimlere dönüştürüyorum.':'Ich verwandle Ideen in klare und wirkungsvolle digitale Erlebnisse.',
   'Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.':'Ich konzentriere mich darauf, meine Fähigkeiten in Webdesign und Frontend-Entwicklung weiterzuentwickeln. Klarheit, Benutzerfreundlichkeit und Ordnung sind mir wichtig.',
   'Anadolu Üniversitesi Web Tasarımı ve Kodlama Önlisans programından mezun oldum. Eğitim sürecimde tasarım ile kodun birlikte nasıl daha anlaşılır dijital deneyimlere dönüşebileceğine odaklandım.':'Ich habe den Associate-Studiengang Webdesign und Coding an der Anadolu Universität abgeschlossen. Dabei habe ich mich darauf konzentriert, wie Design und Code gemeinsam verständliche digitale Erlebnisse schaffen.',
