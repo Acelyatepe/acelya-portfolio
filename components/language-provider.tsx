@@ -14,6 +14,7 @@ const translations: Record<'en' | 'de', Record<string, string>> = {
 };
 
 Object.assign(translations.en, {
+  'Geliştirme Aşamasında':'In Development','Güzellik Merkezi':'Beauty Center','Güzellik Merkezi Web Sitesi':'Beauty Center Website','Bu proje şu anda geliştiriliyor. Çok yakında canlı olarak incelenebilecek.':'This project is currently in development. It will be available to view live very soon.','Projelere Dön':'Back to Projects',
   'Canlı İncele':'View live','Canlı demo':'Live demo',
   'Fikirleri sade ve etkili dijital deneyimlere dönüştürüyorum.':'I turn ideas into simple and effective digital experiences.',
   'Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.':'I focus on improving my web design and frontend development skills. Simplicity, usability and order are important to me.',
@@ -27,6 +28,7 @@ Object.assign(translations.en, {
   'E-Ticaret':'E-commerce','Restoran':'Restaurant','Kahve Dükkânı':'Coffee Shop','Web Uygulaması':'Web Application','Portfolio':'Portfolio'
 });
 Object.assign(translations.de, {
+  'Geliştirme Aşamasında':'In Entwicklung','Güzellik Merkezi':'Beautycenter','Güzellik Merkezi Web Sitesi':'Beautycenter-Website','Bu proje şu anda geliştiriliyor. Çok yakında canlı olarak incelenebilecek.':'Dieses Projekt wird derzeit entwickelt und kann schon bald live angesehen werden.','Projelere Dön':'Zurück zu den Projekten',
   'Canlı İncele':'Live ansehen','Canlı demo':'Live-Demo',
   'Fikirleri sade ve etkili dijital deneyimlere dönüştürüyorum.':'Ich verwandle Ideen in klare und wirkungsvolle digitale Erlebnisse.',
   'Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.':'Ich konzentriere mich darauf, meine Fähigkeiten in Webdesign und Frontend-Entwicklung weiterzuentwickeln. Klarheit, Benutzerfreundlichkeit und Ordnung sind mir wichtig.',
