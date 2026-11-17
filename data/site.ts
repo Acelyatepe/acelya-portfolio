@@ -6,24 +6,31 @@ export const siteConfig = {
   intro: 'Modern, sade ve kullanıcı odaklı web arayüzleri tasarlıyor; frontend geliştirme alanında kendimi sürekli geliştiriyorum.',
   about: [
     'Web tasarımı ve frontend geliştirme alanında kendimi geliştirmeye odaklanıyorum. Tasarımda sadelik, kullanılabilirlik ve düzen benim için önemli.',
-    'Anadolu Üniversitesi Web Tasarımı ve Kodlama Önlisans programından mezun oldum. Eğitim sürecimde tasarım ile kodun birlikte nasıl daha anlaşılır dijital deneyimlere dönüşebileceğine odaklandım.',
+    'Anadolu Üniversitesi Web Tasarımı ve Kodlama Önlisans programından mezun oldum ve aynı üniversitenin Yönetim Bilişim Sistemleri lisans programında öğrenimime devam ediyorum. Eğitim sürecimde tasarım ile kodun birlikte nasıl daha anlaşılır dijital deneyimlere dönüşebileceğine odaklandım.',
     'HTML, CSS ve JavaScript temellerimi geliştirirken responsive tasarım, UI / UX, Figma, Git ve GitHub gibi araçlarla düzenli olarak pratik yapıyorum.',
     'Yeni teknolojiler öğrenerek hem görsel açıdan güçlü hem de kullanıcı dostu web deneyimleri oluşturmayı hedefliyorum. Her projeyi araştırma, deneme ve geri bildirimlerle ilerlettiğim bir öğrenme fırsatı olarak görüyorum.',
   ],
-  email: 'aclysde@gmail.com',
+  email: 'sudeacelyatepe@gmail.com',
   socials: { linkedin: 'https://www.linkedin.com/in/sude-acelya-tepe/', github: 'https://github.com/Acelyatepe', instagram: null },
   availability: 'E-posta ve sosyal medya hesapları üzerinden iletişime geçebilirsiniz.',
 };
 export const skills = [{ name: 'HTML', icon: 'Code2' }, { name: 'CSS', icon: 'Palette' }, { name: 'JavaScript', icon: 'Braces' }, { name: 'Responsive Tasarım', icon: 'PanelsTopLeft' }, { name: 'UI / UX', icon: 'PenTool' }, { name: 'Figma', icon: 'Figma' }, { name: 'Git & GitHub', icon: 'GitBranch' }, { name: 'VS Code', icon: 'TerminalSquare' }, { name: 'Web Standartları', icon: 'BadgeCheck' }, { name: 'Problem Çözme', icon: 'Puzzle' }];
-export const education = [{ year: '2026', school: 'Anadolu Üniversitesi', program: 'Web Tasarımı ve Kodlama', degree: 'Önlisans', status: 'Mezun', honor: 'Onur Öğrencisi' }];
-export const certificates = [
-  { title: 'Animasyon Tasarımı ve Uygulamaları', issuer: 'BTK Akademi', date: '26.07.2026', document: '/certificates/animasyon.pdf' },
-  { title: 'Grafik Tasarıma Giriş', issuer: 'BTK Akademi', date: '12.08.2026', document: '/certificates/grafik-tasarim.pdf' },
-  { title: 'Sosyal Medya Uzmanlığına Giriş', issuer: 'BTK Akademi', date: '02.08.2026', document: '/certificates/sosyal-medya-uzmanligi.pdf' },
-  { title: 'Girişimcilikte Sunum Teknikleri ve İletişim Yönetimi', issuer: 'BTK Akademi', date: '15.12.2025', document: '/certificates/sunum-iletisim.pdf' },
-  { title: 'İngilizce A1 Seviyesi', issuer: 'Millî Eğitim Bakanlığı', date: '01.10.2021', document: '/certificates/ingilizce-a1.pdf' },
-  { title: 'İngilizce A2 Seviyesi', issuer: 'Millî Eğitim Bakanlığı', date: '10.11.2021', document: '/certificates/ingilizce-a2.pdf' },
-  { title: 'İş Yaşamında Sosyal Medya Kullanımı', issuer: 'Millî Eğitim Bakanlığı', date: '04.02.2025', document: '/certificates/is-yasaminda-sosyal-medya.pdf' },
+export const education = [
+  { period: 'Devam ediyor · 1. sınıf', school: 'Anadolu Üniversitesi', program: 'Yönetim Bilişim Sistemleri', degree: 'Lisans', status: 'Aktif öğrenci', extraLabel: 'Odak', extra: 'Bilgi sistemleri ve iş süreçleri', description: 'İşletme, teknoloji ve veri yönetimini bir araya getiren bu lisans programıyla web geliştirme temelimi bilgi sistemleri, veri tabanları ve iş süreçleri bilgisiyle tamamlıyorum.' },
+  { period: 'Mezuniyet · 2026', school: 'Anadolu Üniversitesi', program: 'Web Tasarımı ve Kodlama', degree: 'Önlisans', status: 'Mezun', extraLabel: 'Onur bilgisi', extra: 'Onur Öğrencisi', description: 'Bu program, görsel tasarım yaklaşımımı web teknolojileriyle bir araya getirdiğim akademik temelimi oluşturdu. Öğrenme sürecimi düzenli pratik ve kişisel projelerle sürdürüyorum.' },
+];
+export const certificates: { title: string; issuer: string; date?: string }[] = [
+  { title: 'CSS', issuer: 'BTK Akademi', date: '15.09.2026' },
+  { title: 'Yapay Zekâ ile Web ve Mobil Uygulama Geliştirme', issuer: 'BTK Akademi', date: '11.09.2026' },
+  { title: 'HTML5 ile Web Geliştirme', issuer: 'BTK Akademi', date: '01.09.2026' },
+  { title: 'Grafik Tasarıma Giriş', issuer: 'BTK Akademi', date: '12.08.2026' },
+  { title: 'Sosyal Medya Uzmanlığına Giriş', issuer: 'BTK Akademi', date: '02.08.2026' },
+  { title: 'Animasyon Tasarımı ve Uygulamaları', issuer: 'BTK Akademi', date: '26.07.2026' },
+  { title: 'Girişimcilikte Sunum Teknikleri ve İletişim Yönetimi', issuer: 'BTK Akademi', date: '15.12.2025' },
+  { title: 'İş Yaşamında Sosyal Medya Kullanımı', issuer: 'Millî Eğitim Bakanlığı', date: '04.02.2025' },
+  { title: 'Yapay Zekâ Okuryazarlığı', issuer: 'Millî Eğitim Bakanlığı' },
+  { title: 'İngilizce A2 Seviyesi', issuer: 'Millî Eğitim Bakanlığı', date: '10.11.2021' },
+  { title: 'İngilizce A1 Seviyesi', issuer: 'Millî Eğitim Bakanlığı', date: '01.10.2021' },
 ];
 
 
