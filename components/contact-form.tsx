@@ -47,7 +47,7 @@ export function ContactForm() {
     <button className="button button-dark" type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Gönderiliyor…' : 'Mesajı gönder'} <Send size={17}/></button>
     <div aria-live="polite">
       {status === 'success' && <p className="form-status form-success">Mesajınız bana ulaştı, teşekkürler! En kısa sürede e-posta ile dönüş yapacağım.</p>}
-      {status === 'error' && <p className="form-status form-error">Mesaj gönderilemedi. Lütfen tekrar deneyin ya da doğrudan <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> adresine yazın.</p>}
+      {status === 'error' && <p className="form-status form-error">Mesaj gönderilemedi. Lütfen tekrar deneyin ya da e-posta ile yazın: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>}
       {status !== 'success' && status !== 'error' && <p className="form-hint">Mesajınız doğrudan e-posta kutuma iletilir.</p>}
     </div>
   </form>;
